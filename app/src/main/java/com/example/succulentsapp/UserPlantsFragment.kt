@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.example.succulentsapp.databinding.UserPlantsFragmentBinding
 
 class UserPlantsFragment : Fragment() {
 
@@ -17,7 +19,9 @@ class UserPlantsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.user_plants_fragment, container, false)
+        val binding = DataBindingUtil.inflate<UserPlantsFragmentBinding>(inflater,
+            R.layout.user_plants_fragment, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
